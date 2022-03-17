@@ -1,5 +1,7 @@
 # TyporaWordPressImageUploader
 
+![GifSample](/GifSample.gif)
+
 English [简体中文](/README_CN.md) 
 
 TyporaWordPressImageUploader is a C# Application based on .Net Core 3.1 and allow you automatically upload your local images to your WordPress and show them as a remote link in Markdown by using the custom command image upload in Typora. 
