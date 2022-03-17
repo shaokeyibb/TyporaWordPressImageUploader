@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 ```
 
-然后你讲收到一个包含 token 的 JSON 相应:
+然后你将收到一个包含 token 的 JSON 相应:
 
 ```JSON
 {
