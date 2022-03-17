@@ -1,71 +1,73 @@
 # TyporaWordPressImageUploader
 
-[English](/README.md) ¼òÌåÖÐÎÄ 
+![GifSample](/GifSample.gif)
 
-TyporaWordPressImageUploader ÊÇÒ»¸ö»ùÓÚ .Net Core 3.1 µÄ C# Ó¦ÓÃ£¬ËüÔÊÐíÄãÍ¨¹ý Typora µÄ×Ô¶¨ÒåÃüÁîÐÐÍ¼Æ¬ÉÏ´«Æ÷½«ÄãµÄ±¾µØÍ¼Æ¬×Ô¶¯ÉÏ´«µ½ÄãµÄ WordPress Ã½ÌåÖÐ²¢ÔÚ Markdown ´úÂëÖÐÒÔÔ¶³ÌÁ´½ÓÏÔÊ¾¡£
+[English](/README.md) ç®€ä½“ä¸­æ–‡ 
 
-## °²×°²¢²¿Êð
+TyporaWordPressImageUploader æ˜¯ä¸€ä¸ªåŸºäºŽ .Net Core 3.1 çš„ C# åº”ç”¨ï¼Œå®ƒå…è®¸ä½ é€šè¿‡ Typora çš„è‡ªå®šä¹‰å‘½ä»¤è¡Œå›¾ç‰‡ä¸Šä¼ å™¨å°†ä½ çš„æœ¬åœ°å›¾ç‰‡è‡ªåŠ¨ä¸Šä¼ åˆ°ä½ çš„ WordPress åª’ä½“ä¸­å¹¶åœ¨ Markdown ä»£ç ä¸­ä»¥è¿œç¨‹é“¾æŽ¥æ˜¾ç¤ºã€‚
 
-### ÔÚ WordPress ÉÏ
+## å®‰è£…å¹¶éƒ¨ç½²
 
-ÄãÐèÒª¸úËæÒÔÏÂ²½ÖèÀ´ÆôÓÃ WordPress Rest API µÄ JWT ÑéÖ¤£¬ÕâÑùÎÒÃÇ²ÅÄÜÎªÄãÉÏ´«Í¼Æ¬¡£
+### åœ¨ WordPress ä¸Š
 
-1. °²×° [JWT Authentication for WP REST API](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) ²å¼þµ½ÄãµÄ WordPress ÉÏ
-2. È·±£ÄãÒÑ¾­ÕýÈ·°²×°ÁËÕâ¸ö²å¼þ£¬²¢ÇÒÒÑ¾­°´ÕÕÉÏ·½µÄÁ´½ÓÕýÈ·ÅäÖÃ£¬ÓÈÆäÊÇÍê³ÉÁË CONFIGURATE THE SECRET KEY £¨ÅäÖÃ°²È«ÃÜÔ¿£©ÕâÒ»Ïî¡£
-3. ½ÓÏÂÀ´£¬ÄãÐèÒªÔÚÄãµÄ±¾µØ¼ÆËã»úÉÏ×öÒ»Ð©ÊÂÇé¡£
+ä½ éœ€è¦è·Ÿéšä»¥ä¸‹æ­¥éª¤æ¥å¯ç”¨ WordPress Rest API çš„ JWT éªŒè¯ï¼Œè¿™æ ·æˆ‘ä»¬æ‰èƒ½ä¸ºä½ ä¸Šä¼ å›¾ç‰‡ã€‚
 
-### ÔÚ Typora ÉÏ
+1. å®‰è£… [JWT Authentication for WP REST API](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) æ’ä»¶åˆ°ä½ çš„ WordPress ä¸Š
+2. ç¡®ä¿ä½ å·²ç»æ­£ç¡®å®‰è£…äº†è¿™ä¸ªæ’ä»¶ï¼Œå¹¶ä¸”å·²ç»æŒ‰ç…§ä¸Šæ–¹çš„é“¾æŽ¥æ­£ç¡®é…ç½®ï¼Œå°¤å…¶æ˜¯å®Œæˆäº† CONFIGURATE THE SECRET KEY ï¼ˆé…ç½®å®‰å…¨å¯†é’¥ï¼‰è¿™ä¸€é¡¹ã€‚
+3. æŽ¥ä¸‹æ¥ï¼Œä½ éœ€è¦åœ¨ä½ çš„æœ¬åœ°è®¡ç®—æœºä¸Šåšä¸€äº›äº‹æƒ…ã€‚
 
-ÎÒÃÇÌá¹©ÁËÁ½ÖÖ·½Ê½ÓÃÓÚÑéÖ¤£¬µ«ÊÇÎÒÃÇ½¨ÒéÊ¹ÓÃµÚÒ»ÖÖÒòÎªµÚ¶þÖÖºÃÏñÓÐµãÎÊÌâ :(
+### åœ¨ Typora ä¸Š
 
-#### Ê¹ÓÃ token ½øÐÐÑéÖ¤
+æˆ‘ä»¬æä¾›äº†ä¸¤ç§æ–¹å¼ç”¨äºŽéªŒè¯ï¼Œä½†æ˜¯æˆ‘ä»¬å»ºè®®ä½¿ç”¨ç¬¬ä¸€ç§å› ä¸ºç¬¬äºŒç§å¥½åƒæœ‰ç‚¹é—®é¢˜ :(
 
-Ê×ÏÈ£¬ÏòÄãµÄ WordPress Rest API ¶Ëµã·¢ËÍÒ»¸ö post ÇëÇó£¬¾ÍÏñÕâÑù£º
+#### ä½¿ç”¨ token è¿›è¡ŒéªŒè¯
+
+é¦–å…ˆï¼Œå‘ä½ çš„ WordPress Rest API ç«¯ç‚¹å‘é€ä¸€ä¸ª post è¯·æ±‚ï¼Œå°±åƒè¿™æ ·ï¼š
 
 ```HTTP
-POST https://{ÄãµÄ WordPress µØÖ·}/wp-json/jwt-auth/v1/token
+POST https://{ä½ çš„ WordPress åœ°å€}/wp-json/jwt-auth/v1/token
 Content-Type: application/json
 
 {
-  "username": "{ÄãµÄÓÃ»§Ãû}",
-  "password": "{ÄãµÄÃÜÂë}"
+  "username": "{ä½ çš„ç”¨æˆ·å}",
+  "password": "{ä½ çš„å¯†ç }"
 }
 ```
 
-È»ºóÄã½«ÊÕµ½Ò»¸ö°üº¬ token µÄ JSON ÏàÓ¦:
+ç„¶åŽä½ å°†æ”¶åˆ°ä¸€ä¸ªåŒ…å« token çš„ JSON ç›¸åº”:
 
 ```JSON
 {
-  "token": "{ÄãµÄ token}",
+  "token": "{ä½ çš„ token}",
   "user_email": "...",
   "user_nicename": "...",
   "user_display_name": "..."
 }
 ```
 
-ÏÖÔÚ¡£´ò¿ª Typora£¬Ç°Íù `Ê×Ñ¡Ïî - Í¼Ïñ - Í¼ÏñÉÏ´«ÉèÖÃ`£¬½« `Í¼Æ¬ÉÏ´«Æ÷` Ñ¡ÔñÎª `×Ô¶¨ÒåÃüÁîÐÐ`£¬È»ºóÔÙÏÂ·½µÄ `ÃüÁî` ÎÄ±¾ÓòÖÐÐ´ÈëÒÔÏÂÄÚÈÝ£º
+çŽ°åœ¨ã€‚æ‰“å¼€ Typoraï¼Œå‰å¾€ `é¦–é€‰é¡¹ - å›¾åƒ - å›¾åƒä¸Šä¼ è®¾ç½®`ï¼Œå°† `å›¾ç‰‡ä¸Šä¼ å™¨` é€‰æ‹©ä¸º `è‡ªå®šä¹‰å‘½ä»¤è¡Œ`ï¼Œç„¶åŽå†ä¸‹æ–¹çš„ `å‘½ä»¤` æ–‡æœ¬åŸŸä¸­å†™å…¥ä»¥ä¸‹å†…å®¹ï¼š
 
 ```Shell
-"path-to-TyporaWordPressImageUploader.exe" "https://{ÄãµÄ WordPress µØÖ·}/wp-json" Bearer {ÄãµÄ token}
+"path-to-TyporaWordPressImageUploader.exe" "https://{ä½ çš„ WordPress åœ°å€}/wp-json" Bearer {ä½ çš„ token}
 ```
 
-½ÓÏÂÀ´£¬µã»÷ `²âÊÔÉÏ´«` °´Å¥À´¼ì²âÁ¬½ÓÊÇ·ñÕý³£¡£
+æŽ¥ä¸‹æ¥ï¼Œç‚¹å‡» `æµ‹è¯•ä¸Šä¼ ` æŒ‰é’®æ¥æ£€æµ‹è¿žæŽ¥æ˜¯å¦æ­£å¸¸ã€‚
 
-ÏÂÒ»´Î£¬µ±ÄãÐèÒªÔÚ Typora ÉÏÊ¹ÓÃÒ»¸ö±¾µØÍ¼Æ¬Ê±£¬ÄãÖ»ÐèÒª½«ÆäÍÏµ½Ö÷´°¿ÚÖÐ£¬È»ºóµã»÷ "ÉÏ´«Í¼Ïñ"£¬Í¼Æ¬¾Í»á×Ô¶¯ÉÏ´«µ½ÄãµÄ WordPress ÖÐÁË£¡
+ä¸‹ä¸€æ¬¡ï¼Œå½“ä½ éœ€è¦åœ¨ Typora ä¸Šä½¿ç”¨ä¸€ä¸ªæœ¬åœ°å›¾ç‰‡æ—¶ï¼Œä½ åªéœ€è¦å°†å…¶æ‹–åˆ°ä¸»çª—å£ä¸­ï¼Œç„¶åŽç‚¹å‡» "ä¸Šä¼ å›¾åƒ"ï¼Œå›¾ç‰‡å°±ä¼šè‡ªåŠ¨ä¸Šä¼ åˆ°ä½ çš„ WordPress ä¸­äº†ï¼
 
-#### Ê¹ÓÃÓÃ»§ÃûºÍÃÜÂë½øÐÐÑéÖ¤
+#### ä½¿ç”¨ç”¨æˆ·åå’Œå¯†ç è¿›è¡ŒéªŒè¯
 
-Ê¹ÓÃÓÃ»§ÃûºÍÃÜÂë½øÐÐÑéÖ¤Ê®·ÖÈÝÒ×£¬ÄãÖ»ÐèÒªÏñÇ°ÃæÒ»ÑùÀ´µ½ Typora µÄÏàÍ¬Î»ÖÃ£¬È»ºóÔÚ `ÃüÁî` ÎÄ±¾ÓòÖÐÐ´Èë£º
+ä½¿ç”¨ç”¨æˆ·åå’Œå¯†ç è¿›è¡ŒéªŒè¯ååˆ†å®¹æ˜“ï¼Œä½ åªéœ€è¦åƒå‰é¢ä¸€æ ·æ¥åˆ° Typora çš„ç›¸åŒä½ç½®ï¼Œç„¶åŽåœ¨ `å‘½ä»¤` æ–‡æœ¬åŸŸä¸­å†™å…¥ï¼š
 
 ```Shell
-"path-to-TyporaWordPressImageUploader.exe" "https://{ÄãµÄ WordPress µØÖ·}/wp-json" Basic {ÄãµÄÓÃ»§Ãû} {ÄãµÄÃÜÂë}
+"path-to-TyporaWordPressImageUploader.exe" "https://{ä½ çš„ WordPress åœ°å€}/wp-json" Basic {ä½ çš„ç”¨æˆ·å} {ä½ çš„å¯†ç }
 ```
 
-## Ê¹ÓÃµÄÒÀÀµ¿â
+## ä½¿ç”¨çš„ä¾èµ–åº“
 
 - [WordPressPCL](https://github.com/wp-net/WordPressPCL)
 
-## ¿ªÔ´Ð­Òé
+## å¼€æºåè®®
 
-TyporaWordPressImageUploader »ùÓÚ [Apache License 2.0](/LICENSE.txt) ¿ªÔ´.
+TyporaWordPressImageUploader åŸºäºŽ [Apache License 2.0](/LICENSE.txt) å¼€æº.
 
