@@ -4,67 +4,68 @@
 
 TyporaWordPressImageUploader 是一个基于 .Net Core 3.1 的 C# 应用，它允许你通过 Typora 的自定义命令行图片上传器将你的本地图片自动上传到你的 WordPress 媒体中并在 Markdown 代码中以远程链接显示。
 
-## Install and Deploy
+## 安装并部署
 
-### On WordPress
+### 在 WordPress 上
 
-You need to following these steps to enable the JWT authentication for the WordPress Rest API, and so we can upload the images.
+你需要跟随以下步骤来启用 WordPress Rest API 的 JWT 验证，这样我们才能为你上传图片。
 
-1. Install [JWT Authentication for WP REST API](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) to your WordPress
-2. Make sure you have installed JWT Authentication for WP REST API plugin, and configurated it by following the link above. especially finished the CONFIGURATE THE SECRET KEY.
-3. That's all, and now you need to do something in your local machine.
+1. 安装 [JWT Authentication for WP REST API](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) 插件到你的 WordPress 上
+2. 确保你已经正确安装了这个插件，并且已经按照上方的链接正确配置，尤其是完成了 CONFIGURATE THE SECRET KEY （配置安全密钥）这一项。
+3. 接下来，你需要在你的本地计算机上做一些事情。
 
-### On Typora
+### 在 Typora 上
 
-We have two ways for you to authentication, but we recommend first one because the another one may have broken.
+我们提供了两种方式用于验证，但是我们建议使用第一种因为第二种好像有点问题 :(
 
-#### Authenticate with token
+#### 使用 token 进行验证
 
-First, send a post request to your WordPress Rest API endpoint like this:
+首先，向你的 WordPress Rest API 端点发送一个 post 请求，就像这样：
 
 ```HTTP
-POST https://{your wordpress domain here}/wp-json/jwt-auth/v1/token
+POST https://{你的 WordPress 地址}/wp-json/jwt-auth/v1/token
 Content-Type: application/json
 
 {
-  "username": "{your username}",
-  "password": "{your password}"
+  "username": "{你的用户名}",
+  "password": "{你的密码}"
 }
 ```
 
-And you will receive a JSON response contains your token:
+然后你讲收到一个包含 token 的 JSON 相应:
 
 ```JSON
 {
-  "token": "{your token here}",
+  "token": "{你的 token}",
   "user_email": "...",
   "user_nicename": "...",
   "user_display_name": "..."
 }
 ```
 
-And now, open the Typora, go to `Preference - Image - Image Upload Setting`, select the `Image Uploader` to `Custom Command`, then type these in the `Command` text field:
+现在。打开 Typora，前往 `首选项 - 图像 - 图像上传设置`，将 `图片上传器` 选择为 `自定义命令行`，然后再下方的 `命令` 文本域中写入以下内容：
 
 ```Shell
-"path-to-TyporaWordPressImageUploader.exe" "https://{your wordpress domain here}/wp-json" Bearer {your token here}
+"path-to-TyporaWordPressImageUploader.exe" "https://{你的 WordPress 地址}/wp-json" Bearer {你的 token}
 ```
 
-Next, press the `Test Uploader` button to check the connection is ok. 
+接下来，点击 `测试上传` 按钮来检测连接是否正常。
 
-And that's all, next when you need to use a local image in the Typora, just drag it to the main window, and press "Upload Image", and then the image will automatically upload to your WordPress!
+下一次，当你需要在 Typora 上使用一个本地图片时，你只需要将其拖到主窗口中，然后点击 "上传图像"，图片就会自动上传到你的 WordPress 中了！
 
-#### Authenticate with username and password
+#### 使用用户名和密码进行验证
 
-Authenticate with username and password is very simple, you can just directly go to the same way in Typora like above, and in the `Command` text field type:
+使用用户名和密码进行验证十分容易，你只需要像前面一样来到 Typora 的相同位置，然后在 `命令` 文本域中写入：
 
 ```Shell
-"path-to-TyporaWordPressImageUploader.exe" "https://{your wordpress domain here}/wp-json" Basic {your username here} {your password here}
+"path-to-TyporaWordPressImageUploader.exe" "https://{你的 WordPress 地址}/wp-json" Basic {你的用户名} {你的密码}
 ```
 
-## Libraries Used
+## 使用的依赖库
 
 - [WordPressPCL](https://github.com/wp-net/WordPressPCL)
 
-## License
+## 开源协议
 
-TyporaWordPressImageUploader is licensed under the [Apache License 2.0](/LICENSE).
+TyporaWordPressImageUploader 基于 [Apache License 2.0](/LICENSE.txt) 开源.
+

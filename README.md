@@ -67,4 +67,4 @@ Authenticate with username and password is very simple, you can just directly go
 
 ## License
 
-TyporaWordPressImageUploader is licensed under the [Apache License 2.0](/LICENSE).
+TyporaWordPressImageUploader is licensed under the [Apache License 2.0](/LICENSE.txt).
