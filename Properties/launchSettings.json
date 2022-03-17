@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TyporaWordPressImageUploader": {
+      "commandName": "Project",
+      "commandLineArgs": "\"https://my.minecraft.kim/wp-json/\" bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbXkubWluZWNyYWZ0LmtpbSIsImlhdCI6MTY0NzQ5NDkyNywibmJmIjoxNjQ3NDk0OTI3LCJleHAiOjE2NDgwOTk3MjcsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.opyrFonPqZD5VR4_iGrhf1671PsY-sZhEG1TICilXOo \"C:\\Users\\shaok\\Pictures\\Camera Roll\\81587840_p0.jpg\""
+    }
+  }
+}
